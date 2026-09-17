@@ -1,17 +1,42 @@
 # simplecalculator
 
-A new Flutter project.
+A simple calculator built with Flutter, with the keys you would find on a basic
+pocket calculator.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Digits `0`–`9`, a decimal point and the four operations `+`, `−`, `×`, `÷`
+- `=` with repeat: pressing it again repeats the last operation (`5 + 3 =` → 8,
+  → 11, → 14)
+- `AC` (all clear), backspace, `±` sign toggle, `%` and `√`
+- Memory keys `MC`, `MR`, `M+`, `M−`, with an `M` indicator on the display
+- A second display line showing the pending calculation, e.g. `12 +`
+- Divide-by-zero and root-of-a-negative show `Error` until `AC` is pressed
+- Physical keyboard support: digits, `+ - * /`, `Enter`/`=`, `.`, `%`,
+  `Backspace`, `Delete` (clear entry) and `Esc` (all clear)
 
-A few resources to get you started if this is your first Flutter project:
+## Layout
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| | | | |
+|---|---|---|---|
+| MC | MR | M+ | M− |
+| AC | ± | % | ÷ |
+| 7 | 8 | 9 | × |
+| 4 | 5 | 6 | − |
+| 1 | 2 | 3 | + |
+| √ | 0 | . | = |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Code
+
+- [lib/calculator_engine.dart](lib/calculator_engine.dart) — all calculation
+  state and logic, with no UI code, so it can be unit tested on its own.
+- [lib/main.dart](lib/main.dart) — the Material 3 UI: display, keypad and
+  keyboard handling.
+
+## Running
+
+```sh
+flutter pub get
+flutter run       # add -d chrome, -d windows, … to pick a device
+flutter test
+```
