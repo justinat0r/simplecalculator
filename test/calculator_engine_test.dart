@@ -32,6 +32,10 @@ void main() {
     test('starts at zero', () {
       expect(engine.display, '0');
     });
+    test('Add 2+2', () {
+      type('2+2=');
+      expect(engine.display, '4');
+    });
 
     test('replaces the leading zero', () {
       type('05');
