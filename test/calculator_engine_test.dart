@@ -37,6 +37,23 @@ void main() {
       expect(engine.display, '4');
     });
 
+    test('Subtract 2 from 2', () {
+      type('2-2=');
+      expect(engine.display, '0');
+    });
+    test('Multiply 2 by 2', () {
+      type('2*2=');
+      expect(engine.display, '4');
+    });
+
+    test('Add three numbers together', () {
+      type('2+5+4=');
+      expect(engine.display, '11');
+    });
+    test('Divide 10 by 2', () {
+      type('10/2=');
+      expect(engine.display, '5');
+    });
     test('replaces the leading zero', () {
       type('05');
       expect(engine.display, '5');
